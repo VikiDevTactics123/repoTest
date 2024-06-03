@@ -1,15 +1,19 @@
 os: linux
-language: ruby
-ruby: 3.1.2
+
+vm:
+  size: [large]
+language: java
+services:
+  - docker
+cache: bundler
 dist: bionic
+
 
 install: skip
 
 jobs:
   include:
     - name: failing
-      script: false
-    - name: passing
       script: true
 
 after_success:
